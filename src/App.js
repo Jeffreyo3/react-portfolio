@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import Nav from './components/Nav'
+import Intro from './components/Intro'
 
 //////////// STYLED COMPONENTS /////////////
 const AppDiv = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   width: 100%;
   max-width: 1300px;
@@ -22,9 +24,13 @@ const Header = styled.header`
 export default function App() {
   return (
     <AppDiv>
+      
       <Header>
         <Nav />
       </Header>
+
+      <Intro />
+      
     </AppDiv>
   );
 }
