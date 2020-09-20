@@ -10,7 +10,7 @@ const fontsizes = {
     fs_p: "2.4rem",
     fs_h: "3.6rem",
     fs_title: "6.4rem",
-    fs_nav: "2.4rem",
+    fs_li: "2.4rem",
     fs_label: "2.4rem"
 }
 
