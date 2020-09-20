@@ -9,10 +9,11 @@ const AppDiv = styled.div`
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+  font-family: ${p => p.theme.fonts.f_primary};
 `
 
 const Header = styled.header`
-  width: 100%;
+  width: 95%;
 `
 //////////// END STYLED COMPONENTS /////////////
 

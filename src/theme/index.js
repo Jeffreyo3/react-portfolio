@@ -14,8 +14,13 @@ const fontsizes = {
     fs_label: "2.4rem"
 }
 
+const fonts = {
+    f_primary: "Roboto",
+    f_secondary: "Open Sans"
+}
 
 export default {
     colors,
-    fontsizes
+    fontsizes,
+    fonts
 }
