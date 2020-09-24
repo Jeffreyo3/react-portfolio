@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import headshot from '../images/headshot.png'
 
 //////////// STYLED COMPONENTS /////////////
-const HeaderDiv = styled.div`
+const IntroDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5.6rem 0;
+    margin: 5.6rem auto;
     width: 95%;
 `
 
@@ -18,8 +18,8 @@ const TitleH1 = styled.h1`
 
 const Img = styled.img`
     border-radius: 49%;
-    width: 25%;
-    margin-right: 2rem;
+    width: 308px;
+    margin: 0 1rem 0 2rem;
 `
 //////////// END STYLED COMPONENTS /////////////
 
@@ -28,10 +28,10 @@ const Img = styled.img`
 export default function Intro() {
 
     return (
-        <HeaderDiv>
+        <IntroDiv>
             <TitleH1>Hello, My name is Jeff and I’m a software Developer.</TitleH1>
             <Img src={headshot} alt="Jeff in black shirt smiling in front of a grey background."/>
-        </HeaderDiv>
+        </IntroDiv>
     )
 }
 //////////// END REACT COMPONENT /////////////

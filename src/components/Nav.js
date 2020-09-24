@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const NavBar = styled.nav`
     display: flex;
     justify-content: space-between;
-    padding: 3rem 0;
+    padding: 3rem .5rem;
     border-bottom: 2px solid ${p => p.theme.colors.c_secondary};
 `
 
@@ -14,7 +14,7 @@ const Ul = styled.ul`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 50%;
+    width: 70%;
     max-width: 600px;
 `
 

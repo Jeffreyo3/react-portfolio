@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "name": "Great Idea Website: User Interface",
+    "description": "Great Idea Website displays the use of basic CSS styling as well as HTML semantics.",
+    "role": [
+      "Study design image supplied for the desktop page.",
+      "Convert page into HTML using HTML semantics.",
+      "Style page using basic CSS to match supplied design image."
+    ],
+    "deployed_url": "https://jeffreyo3.github.io/Lambda_User_Interface",
+    "github_repo": "https://github.com/Jeffreyo3/Lambda_User_Interface",
+    "screenshots": [
+      "https://jeffreyorndorff.com/images/great-idea-desktop.PNG"
+    ],
+    "tags": ["HTML", "CSS"]
+  },
+  {
+    "id": 2,
+    "name": "Great Idea Website: Responsive Design",
+    "description": "This project converts a page from being desktop-only Great Idea Website to being mobile-friendly.",
+    "role": [
+      "Review design files for each different screen type.",
+      "Introduce max-width media queries into your project at 800px and 500px.",
+      "Style page as close as possible to each design at the different breakpoints."
+    ],
+    "deployed_url": "https://jeffreyo3.github.io/Lambda_User_Interface",
+    "github_repo": "https://github.com/Jeffreyo3/Lambda_User_Interface",
+    "screenshots": [],
+    "tags": ["HTML", "CSS"]
+  },
+  {
+    "id": 3,
+    "name": "Fun Bus Travel Agency",
+    "description": "Fun Bus Travel Agency is a page designed to be responsive by being built using FlexBox and the LESS preprocessor.",
+    "role": [
+      "Study design files in order to create a page that looks good on many screen sizes.",
+      "Setup LESS and organize LESS files via imports.",
+      "Design page using FlexBox, LESS, and media queries."
+    ],
+    "deployed_url": "https://jeffreyo3.github.io/Preprocessing-II/",
+    "github_repo": "https://github.com/Jeffreyo3/Preprocessing-II",
+    "screenshots": [],
+    "tags": ["HTML", "LESS"]
+  }
+]

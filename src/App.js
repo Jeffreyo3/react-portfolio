@@ -16,6 +16,7 @@ const AppDiv = styled.div`
 
 const Header = styled.header`
   width: 95%;
+  margin: 0 auto;
 `
 //////////// END STYLED COMPONENTS /////////////
 
