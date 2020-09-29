@@ -10,9 +10,7 @@
     ],
     "deployed_url": "https://jeffreyo3.github.io/Lambda_User_Interface",
     "github_repo": "https://github.com/Jeffreyo3/Lambda_User_Interface",
-    "screenshots": [
-      "https://jeffreyorndorff.com/images/great-idea-desktop.PNG"
-    ],
+    "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1594501508/samples/food/spices.jpg",
     "tags": ["HTML", "CSS"]
   },
   {
@@ -26,7 +24,7 @@
     ],
     "deployed_url": "https://jeffreyo3.github.io/Lambda_User_Interface",
     "github_repo": "https://github.com/Jeffreyo3/Lambda_User_Interface",
-    "screenshots": [],
+    "screenshot": null,
     "tags": ["HTML", "CSS"]
   },
   {
@@ -40,7 +38,7 @@
     ],
     "deployed_url": "https://jeffreyo3.github.io/Preprocessing-II/",
     "github_repo": "https://github.com/Jeffreyo3/Preprocessing-II",
-    "screenshots": [],
+    "screenshot": null,
     "tags": ["HTML", "LESS"]
   }
 ]
