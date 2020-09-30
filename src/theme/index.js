@@ -1,4 +1,6 @@
 const colors = {
+  c_app_bg: "#F6F6F6",
+  c_background: "#FFFFFF",
   c_p: "#000000",
   c_h2: "#21242C",
   c_primary: "#01577A",

@@ -9,10 +9,12 @@ const ProjInfo = styled.div`
   height: 80%;
   min-height: 32rem;
   margin: 13% 17% 0 17%;
+  /* background-color: ${(pr) => pr.theme.colors.c_background}; */
 `;
 
 const InfoText = styled.div`
   width: 100%;
+  /* background-color: ${(pr) => pr.theme.colors.c_background}; */
   h3 {
     font-size: ${(pr) => pr.theme.fontsizes.fs_secondary_h};
     margin-bottom: 2rem;
@@ -48,6 +50,7 @@ const ButtonDiv = styled.div`
 const CodeButton = styled.a`
   color: ${(pr) => pr.theme.colors.c_tertiary};
   border-color: ${(pr) => pr.theme.colors.c_tertiary};
+  background-color: ${(pr) => pr.theme.colors.c_background};
 `;
 const LiveButton = styled.a`
   color: ${(pr) => pr.theme.colors.c_live};
