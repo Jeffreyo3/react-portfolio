@@ -7,7 +7,7 @@ import SkillCard from "./SkillCard";
 const H2 = styled.h2`
   color: ${(p) => p.theme.colors.c_h2};
   font-size: ${(p) => p.theme.fontsizes.fs_h};
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 `;
 
 const SkillGrid = styled.ul`
@@ -17,7 +17,7 @@ const SkillGrid = styled.ul`
   align-items: center;
   height: 6rem;
   max-width: 1000px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto;
 `;
 //////////// END STYLED COMPONENTS /////////////
 
@@ -37,7 +37,6 @@ export default function Skills() {
 
       <SkillGrid>
         {skills.map((skill, idx) => {
-          console.log(idx, skills.length - 1);
           return (
             <SkillCard
               key={idx}
@@ -47,7 +46,6 @@ export default function Skills() {
           );
         })}
       </SkillGrid>
-
     </Container>
   );
 }

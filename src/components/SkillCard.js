@@ -4,11 +4,12 @@ import styled from "styled-components";
 ////////////// STYLED COMPONENTS ///////////////
 const SkillGridItem = styled.li`
   font-size: ${(pr) => pr.theme.fontsizes.fs_p};
+  font-style: italic;
 `;
 
 const Border = styled.div`
   height: 50%;
-  border: .5px dashed ${(pr) => pr.theme.colors.c_tertiary_faded};
+  border-right: .1rem dashed ${(pr) => pr.theme.colors.c_tertiary_faded};
 `;
 //////////// END STYLED COMPONENTS /////////////
 

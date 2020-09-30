@@ -19,7 +19,7 @@ const TitleH1 = styled.h1`
 const Img = styled.img`
     border-radius: 49%;
     width: 308px;
-    margin: 0 1rem 0 2rem;
+    margin: 0 1rem 0 6.2rem;
 `
 //////////// END STYLED COMPONENTS /////////////
 

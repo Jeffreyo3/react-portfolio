@@ -14,12 +14,19 @@ const AppDiv = styled.div`
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  font-family: ${(p) => p.theme.fonts.f_primary};
+  font-family: ${(pr) => pr.theme.fonts.f_primary};
 `;
 
 const Header = styled.header`
   width: 95%;
   margin: 0 auto;
+`;
+
+const DIVIDE = styled.div`
+  max-width: 82.5rem;
+  width: 95%;
+  border-bottom: 0.1rem solid ${(pr) => pr.theme.colors.c_divider};
+  margin: 6rem auto;
 `;
 //////////// END STYLED COMPONENTS /////////////
 
@@ -34,8 +41,10 @@ export default function App() {
       <Intro />
       <Skills />
       <Summary />
+      
+      <DIVIDE />
 
-      {/* <Projects /> */}
+      <Projects />
     </AppDiv>
   );
 }
