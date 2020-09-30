@@ -48,14 +48,41 @@ const ButtonDiv = styled.div`
 `;
 
 const CodeButton = styled.a`
-  color: ${(pr) => pr.theme.colors.c_tertiary};
   border-color: ${(pr) => pr.theme.colors.c_tertiary};
   background-color: ${(pr) => pr.theme.colors.c_background};
+  &:link {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+  }
+  &:visited {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+  }
+  &:hover {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+    font-weight: bold;
+    box-shadow: 2px 2px 5px ${(pr) => pr.theme.colors.c_shadow};
+  }
+  &:active {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+  }
 `;
 const LiveButton = styled.a`
-  color: ${(pr) => pr.theme.colors.c_live};
-  border-color: ${(pr) => pr.theme.colors.c_tertiary};
+  border-color: ${(pr) => pr.theme.colors.c_primary};
   background-color: ${(pr) => pr.theme.colors.c_primary};
+  &:link {
+    color: ${(pr) => pr.theme.colors.c_live};
+  }
+  &:visited {
+    color: ${(pr) => pr.theme.colors.c_live};
+  }
+  &:hover {
+    color: ${(pr) => pr.theme.colors.c_live};
+    font-weight: bold;
+    border-color: ${pr => pr.theme.colors.c_tertiary};
+    box-shadow: 4px 4px 5px ${(pr) => pr.theme.colors.c_shadow};
+  }
+  &:active {
+    color: ${(pr) => pr.theme.colors.c_live};
+  }
 `;
 //////////// END STYLED COMPONENTS /////////////
 
