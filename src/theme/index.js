@@ -11,6 +11,7 @@ const colors = {
   c_divider: "#2D3E4E",
   c_shadow: "#b3b3b3",
   c_live: "#FFFFFF",
+  c_placeholder: "#0173a1",
 };
 
 const fontsizes = {

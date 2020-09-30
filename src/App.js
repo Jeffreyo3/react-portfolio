@@ -5,6 +5,7 @@ import Intro from "./components/Intro";
 import Summary from "./components/Summary";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 //////////// STYLED COMPONENTS /////////////
 const AppDiv = styled.div`
@@ -41,10 +42,14 @@ export default function App() {
       <Intro />
       <Skills />
       <Summary />
-      
+
       <DIVIDE />
 
       <Projects />
+
+      <DIVIDE />
+
+      <Contact />
     </AppDiv>
   );
 }

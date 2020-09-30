@@ -7,7 +7,7 @@ import ProjectInfo from "./ProjectInfo";
 const CardContainer = styled.div`
   display: flex;
   width: 100%;
-  margin: 0 auto 10rem;
+  margin: 3rem auto 7rem;
   justify-content: center;
   box-shadow: 2.5px 6px 10px ${(pr) => pr.theme.colors.c_shadow};
 

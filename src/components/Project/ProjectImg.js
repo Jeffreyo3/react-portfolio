@@ -27,19 +27,18 @@ const Img = styled.img`
 //////////// END STYLED COMPONENTS /////////////
 
 /////////////// REACT COMPONENT ////////////////
-export default function ProjectImg({alt, img}) {
-    console.log(alt, img)
+export default function ProjectImg({ alt, img }) {
   return (
     <ImgContainer>
-        <Img
-          src={
-            img
-              ? img
-              : "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-          }
-          alt={alt}
-        />
-      </ImgContainer>
+      <Img
+        src={
+          img
+            ? img
+            : "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+        }
+        alt={alt}
+      />
+    </ImgContainer>
   );
 }
 ///////////// END REACT COMPONENT //////////////
