@@ -60,6 +60,7 @@ const CodeButton = styled.a`
     color: ${(pr) => pr.theme.colors.c_tertiary};
     font-weight: bold;
     box-shadow: 2px 2px 5px ${(pr) => pr.theme.colors.c_shadow};
+    cursor: pointer;
   }
   &:active {
     color: ${(pr) => pr.theme.colors.c_tertiary};
@@ -79,6 +80,7 @@ const LiveButton = styled.a`
     font-weight: bold;
     border-color: ${pr => pr.theme.colors.c_tertiary};
     box-shadow: 4px 4px 5px ${(pr) => pr.theme.colors.c_shadow};
+    cursor: pointer;
   }
   &:active {
     color: ${(pr) => pr.theme.colors.c_live};

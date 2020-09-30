@@ -6,6 +6,7 @@ import Summary from "./components/Summary";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 //////////// STYLED COMPONENTS /////////////
 const AppDiv = styled.div`
@@ -29,12 +30,18 @@ const DIVIDE = styled.div`
   border-bottom: 0.1rem solid ${(pr) => pr.theme.colors.c_divider};
   margin: 6rem auto;
 `;
+
+const FooterContainer = styled.footer`
+  width: 95%;
+  margin: 0 auto;
+`;
 //////////// END STYLED COMPONENTS /////////////
 
 //////////// REACT COMPONENT /////////////
 export default function App() {
   return (
     <AppDiv>
+
       <Header>
         <Nav />
       </Header>
@@ -50,6 +57,13 @@ export default function App() {
       <DIVIDE />
 
       <Contact />
+
+      <DIVIDE />
+
+      <FooterContainer>
+        <Footer />
+      </FooterContainer>
+
     </AppDiv>
   );
 }

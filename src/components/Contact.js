@@ -116,11 +116,11 @@ const Button = styled.button`
   border-color: ${(pr) => pr.theme.colors.c_primary};
   background-color: ${(pr) => pr.theme.colors.c_primary};
 
-
   &:hover {
     color: ${(pr) => pr.theme.colors.c_live};
     font-weight: bold;
     box-shadow: 4px 4px 5px ${(pr) => pr.theme.colors.c_shadow};
+    cursor: pointer;
   }
 `;
 //////////// END STYLED COMPONENTS /////////////
@@ -133,14 +133,14 @@ export default function Contact() {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <Container>
+    <Container id="contact">
       <H2>Let's get in touch!</H2>
       <Form onSubmit={handleSubmit(onSubmit)}>
         {/* NAME */}
         <Label htmlFor="name">Name</Label>
         <Input
           name="name"
-          placeholder="Name"
+          placeholder="Name (Required)"
           ref={register({
             required: "A name is required to submit",
             pattern: {
@@ -167,7 +167,7 @@ export default function Contact() {
                     if (idx > 0) {
                       return null;
                     }
-                    return <Error key={type}>{message}</Error>;
+                    return <Error key={type}>⚠ {message}</Error>;
                   })
                 : null;
             }}
@@ -179,7 +179,7 @@ export default function Contact() {
         <Input
           name="email"
           type="email"
-          placeholder="E-mail Address"
+          placeholder="E-mail (Required)"
           ref={register({
             required: {
               value: true,
@@ -200,7 +200,7 @@ export default function Contact() {
                     if (idx > 0) {
                       return null;
                     }
-                    return <Error key={type}>{message}</Error>;
+                    return <Error key={type}>⚠ {message}</Error>;
                   })
                 : null;
             }}
@@ -211,9 +211,15 @@ export default function Contact() {
         <Label htmlFor="phone">Phone Number</Label>
         <Input
           name="phone"
-          placeholder="Phone Number"
+          placeholder="Phone (Optional)"
           type="tel"
-          ref={register}
+          ref={register({
+            required: false,
+            pattern: {
+              value: /^[0-9]*$/,
+              message: "The phone number field only accepts numbers",
+            },
+          })}
         />
         {!errors.phone ? (
           <ErrSpace />
@@ -228,7 +234,7 @@ export default function Contact() {
                     if (idx > 0) {
                       return null;
                     }
-                    return <Error key={type}>{message}</Error>;
+                    return <Error key={type}>⚠ {message}</Error>;
                   })
                 : null;
             }}
@@ -240,7 +246,7 @@ export default function Contact() {
         <MessageInput
           name="message"
           type="text"
-          placeholder="Message"
+          placeholder="Message (Optional)"
           ref={register({ required: false, maxLength: 500 })}
         />
         {!errors.message ? (
@@ -256,7 +262,7 @@ export default function Contact() {
                     if (idx > 0) {
                       return null;
                     }
-                    return <Error key={type}>{message}</Error>;
+                    return <Error key={type}>⚠ {message}</Error>;
                   })
                 : null;
             }}

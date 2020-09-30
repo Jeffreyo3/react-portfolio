@@ -38,6 +38,7 @@ const A = styled.a`
   &:hover {
     color: ${(pr) => pr.theme.colors.c_tertiary};
     font-weight: bold;
+    cursor: pointer;
   }
   &:active {
     color: ${(pr) => pr.theme.colors.c_p};
@@ -55,13 +56,13 @@ export default function Nav() {
           <A href="#">Home</A>
         </Li>
         <Li>
-          <A href="#">Projects</A>
+          <A href="#projects">Projects</A>
         </Li>
         <Li>
           <A href="#">Resume</A>
         </Li>
         <Li>
-          <A href="#">Contact</A>
+          <A href="#contact">Contact</A>
         </Li>
       </Ul>
     </NavBar>

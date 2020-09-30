@@ -22,6 +22,7 @@ const fontsizes = {
   fs_li: "2.4rem",
   fs_label: "2.4rem",
   fs_description: "2rem",
+  fs_footer: "1.5rem",
 };
 
 const fonts = {
