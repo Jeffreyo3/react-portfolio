@@ -11,7 +11,6 @@ const Form = styled.form`
   max-width: 82.5rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20rem;
 `;
 
 const Label = styled.label`
@@ -100,6 +99,29 @@ const Error = styled.p`
 const ErrSpace = styled.div`
   width: 100%;
   height: 4.2rem;
+`;
+
+const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.5rem;
+  text-decoration: none;
+  font-size: ${(pr) => pr.theme.fontsizes.fs_li};
+  color: ${(pr) => pr.theme.colors.c_live};
+  padding: 2px 6px 2px 6px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 7px;
+  border-color: ${(pr) => pr.theme.colors.c_primary};
+  background-color: ${(pr) => pr.theme.colors.c_primary};
+
+
+  &:hover {
+    color: ${(pr) => pr.theme.colors.c_live};
+    font-weight: bold;
+    box-shadow: 4px 4px 5px ${(pr) => pr.theme.colors.c_shadow};
+  }
 `;
 //////////// END STYLED COMPONENTS /////////////
 
@@ -242,7 +264,7 @@ export default function Contact() {
         )}
 
         {/* SUBMIT */}
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
       </Form>
     </Container>
   );
