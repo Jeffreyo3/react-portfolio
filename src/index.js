@@ -1,14 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { ThemeProvider } from 'styled-components'
-import theme from './theme'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import styled, { ThemeProvider } from "styled-components";
+import theme from "./theme";
+
+const Background = styled.div`
+  background-color: ${(pr) => pr.theme.colors.c_app_bg};
+`;
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <App />
+    <Background>
+      <App />
+    </Background>
   </ThemeProvider>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
