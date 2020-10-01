@@ -139,6 +139,7 @@ export default function Contact() {
         {/* NAME */}
         <Label htmlFor="name">Name</Label>
         <Input
+          id="name"
           name="name"
           placeholder="Name (Required)"
           ref={register({
@@ -177,6 +178,7 @@ export default function Contact() {
         {/* EMAIL */}
         <Label htmlFor="email">E-mail</Label>
         <Input
+          id="email"
           name="email"
           type="email"
           placeholder="E-mail (Required)"
@@ -210,6 +212,7 @@ export default function Contact() {
         {/* PHONE */}
         <Label htmlFor="phone">Phone Number</Label>
         <Input
+          id="phone"
           name="phone"
           placeholder="Phone (Optional)"
           type="tel"
@@ -244,6 +247,7 @@ export default function Contact() {
         {/* MESSAGE */}
         <Label htmlFor="message">Message</Label>
         <MessageInput
+          id="message"
           name="message"
           type="text"
           placeholder="Message (Optional)"
