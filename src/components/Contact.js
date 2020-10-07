@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import styled from "styled-components";
@@ -127,10 +128,17 @@ const Button = styled.button`
 
 /////////////// REACT COMPONENT ////////////////
 export default function Contact() {
-  const { register, errors, handleSubmit } = useForm({
+  const { register, errors, handleSubmit, reset } = useForm({
     criteriaMode: "all",
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    axios.post(process.env.REACT_APP_POST_API, data)
+    .then(res => {
+      console.log(res)
+      reset()
+    }).catch(err => console.log(err)) 
+    console.log(data)
+  };
 
   return (
     <Container id="contact">
