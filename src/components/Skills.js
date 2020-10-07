@@ -33,7 +33,7 @@ export default function Skills() {
   ];
   return (
     <Container>
-      <H2>Skills</H2>
+      <H2 id="about">Skills</H2>
 
       <SkillGrid>
         {skills.map((skill, idx) => {

@@ -1,9 +1,11 @@
-import React from "react";
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import styled from "styled-components";
 import { Container, H2 } from "../theme/styles";
+import ContactLoading from "./Contact/ContactLoading";
+import ContactFailed from "./Contact/ContactFailed";
 
 ////////////// STYLED COMPONENTS ///////////////
 const Form = styled.form`
@@ -127,22 +129,35 @@ const Button = styled.button`
 //////////// END STYLED COMPONENTS /////////////
 
 /////////////// REACT COMPONENT ////////////////
-export default function Contact() {
-  const { register, errors, handleSubmit, reset } = useForm({
+export default function Contact({ setSubmitted }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitFail, setSubmitFail] = useState(false);
+  const { register, errors, handleSubmit } = useForm({
     criteriaMode: "all",
   });
   const onSubmit = (data) => {
-    axios.post(process.env.REACT_APP_POST_API, data)
-    .then(res => {
-      console.log(res)
-      reset()
-    }).catch(err => console.log(err)) 
-    console.log(data)
+    setIsLoading(true);
+    axios
+      .post(process.env.REACT_APP_POST_API, data)
+      .then((res) => {
+        console.log(res.data);
+        setIsLoading(false);
+        setSubmitted(true);
+        setSubmitFail(false);
+      })
+      .catch((err) => {
+        setIsLoading(false);
+        setSubmitFail(true);
+        console.log(err);
+      });
   };
 
-  return (
+  return isLoading ? (
+    <ContactLoading />
+  ) : (
     <Container id="contact">
-      <H2>Let's get in touch!</H2>
+      <H2>Contact: Let's get in touch!</H2>
+      {submitFail ? <ContactFailed /> : null}
       <Form onSubmit={handleSubmit(onSubmit)}>
         {/* NAME */}
         <Label htmlFor="name">Name</Label>

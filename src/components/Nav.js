@@ -53,7 +53,7 @@ export default function Nav() {
       <Span>J|O</Span>
       <Ul>
         <Li>
-          <A href="#">Home</A>
+          <A href="#about">About</A>
         </Li>
         <Li>
           <A href="#projects">Projects</A>
