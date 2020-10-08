@@ -15,7 +15,7 @@ const CardContainer = styled.div`
 `;
 
 const ProjInfoContainer = styled.div`
-  width: 63rem;
+  width: 64.5rem;
   background-color: ${(pr) => pr.theme.colors.c_background};
 
   border-top-right-radius: 10px;

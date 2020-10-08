@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../theme/styles";
 import SkillCard from "./SkillCard";
+import skills from "../data/skills.json";
 
 ////////////// STYLED COMPONENTS ///////////////
 const H2 = styled.h2`
@@ -23,17 +24,9 @@ const SkillGrid = styled.ul`
 
 /////////////// REACT COMPONENT ////////////////
 export default function Skills() {
-  const skills = [
-    "JavaScript",
-    "ReactJS",
-    "NodeJS",
-    "Python3",
-    "Java Spring",
-    "CSS",
-  ];
   return (
     <Container>
-      <H2>Skills</H2>
+      <H2 id="about">Skills</H2>
 
       <SkillGrid>
         {skills.map((skill, idx) => {

@@ -8,7 +8,7 @@ export default function Projects() {
   const [projectData] = useState(projectJSON);
   return (
     <Container id="projects">
-      <H2>Latest Projects</H2>
+      <H2>Featured Projects</H2>
       {projectData.map((project) => (
         <ProjectCard key={project.id} project={project} />
       ))}

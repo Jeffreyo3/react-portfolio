@@ -8,13 +8,12 @@ const ProjInfo = styled.div`
   justify-content: space-between;
   height: 80%;
   min-height: 32rem;
-  margin: 13% 17% 0 17%;
-  /* background-color: ${(pr) => pr.theme.colors.c_background}; */
+  margin: 10% 15% ;
 `;
 
 const InfoText = styled.div`
   width: 100%;
-  /* background-color: ${(pr) => pr.theme.colors.c_background}; */
+
   h3 {
     font-size: ${(pr) => pr.theme.fontsizes.fs_secondary_h};
     margin-bottom: 2rem;
@@ -22,16 +21,17 @@ const InfoText = styled.div`
   p {
     font-size: ${(pr) => pr.theme.fontsizes.fs_description};
     font-family: ${(pr) => pr.theme.fonts.f_secondary};
+    line-height: 1.1;
+    margin-bottom: 5%;
   }
 `;
 
 const ButtonDiv = styled.div`
   width: 100%;
-  height: 15.5rem;
+  min-height: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom:4.5%;
   
   a {
     display: flex;
@@ -94,7 +94,8 @@ export default function ProjectInfo({project}) {
     <ProjInfo>
           <InfoText>
             <h3>{project.name}</h3>
-            <p>{project.description}</p>
+            {project.description.map((item,idx) => <p key={idx}>{item}</p>)}
+            {/* <p>{project.description}</p> */}
           </InfoText>
           <ButtonDiv>
             <CodeButton

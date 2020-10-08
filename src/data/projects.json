@@ -1,44 +1,60 @@
 [
   {
     "id": 1,
-    "name": "Great Idea Website: User Interface",
-    "description": "Great Idea Website displays the use of basic CSS styling as well as HTML semantics.",
-    "role": [
-      "Study design image supplied for the desktop page.",
-      "Convert page into HTML using HTML semantics.",
-      "Style page using basic CSS to match supplied design image."
+    "name": "Plza: Connection Through Pizza",
+    "description": [
+      "Role: Worked on a team of 5 other developers to add to an existing code base. Built out the user dashboards and gave users the ability to follow other users. increased the project's test coverage from 0% to 20% (unit testing).",
+      "Summary: Connecting pizza eaters & businesses- find & rate pizza and organize pizza-related social gatherings and events. Eaters: Find your friends and favorite places, maybe discover something new! Leave & read reviews. Businesses: Engage with fans, both old and new.",
+      "Tech stack: ReactJS, SemanticUI, Redux, Axios, Jest, React-Testing-Library, NodeJS, Express, Knex, PostgreSQL, AWS Amplify."
     ],
-    "deployed_url": "https://jeffreyo3.github.io/Lambda_User_Interface",
-    "github_repo": "https://github.com/Jeffreyo3/Lambda_User_Interface",
-    "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1594501508/samples/food/spices.jpg",
-    "tags": ["HTML", "CSS"]
+    "deployed_url": "https://www.pleazza.com/",
+    "github_repo": "https://github.com/Jeffreyo3/Labs-Pleazza-Front-End",
+    "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1602093402/portfolio-screens/conways-game-of-life_mootxd.png",
+    "tags": [
+      "HTML",
+      "CSS",
+      "SemanticUI",
+      "ReactJS",
+      "NodeJS",
+      "PostgreSQL",
+      "Redux",
+      "Axios",
+      "Jest",
+      "React Testing Library",
+      "AWS Amplify",
+      "Express",
+      "Knex"
+    ]
   },
   {
     "id": 2,
-    "name": "Great Idea Website: Responsive Design",
-    "description": "This project converts a page from being desktop-only Great Idea Website to being mobile-friendly.",
-    "role": [
-      "Review design files for each different screen type.",
-      "Introduce max-width media queries into your project at 800px and 500px.",
-      "Style page as close as possible to each design at the different breakpoints."
+    "name": "Conway's Game of Life",
+    "description": [
+      "Role: Create and implement an algorithm to simulate cellular automata based on Conway's Game of Life. Create buttons and sliders to allow the player a custom experience.",
+      "Summary: This is a turing complete algorithm that simulates cellular automata. Conway's Game of Life was created in 1970 by the British mathmetician, John Horton Conway. The player interacts with the game by creating an initial layout, and when executed, the game is capable of infinitely evolving.",
+      "Tech stack: CSS, ReactJS, Redux"
     ],
-    "deployed_url": "https://jeffreyo3.github.io/Lambda_User_Interface",
-    "github_repo": "https://github.com/Jeffreyo3/Lambda_User_Interface",
-    "screenshot": null,
-    "tags": ["HTML", "CSS"]
+    "deployed_url": "https://jeffs-game-of-life.vercel.app/",
+    "github_repo": "https://github.com/Jeffreyo3/conways-game-of-life",
+    "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1602111682/portfolio-screens/conways-game-of-life_asbiza.png",
+    "tags": ["HTML", "CSS", "ReactJS", "Redux", "Algorithms"]
   },
   {
     "id": 3,
-    "name": "Fun Bus Travel Agency",
-    "description": "Fun Bus Travel Agency is a page designed to be responsive by being built using FlexBox and the LESS preprocessor.",
-    "role": [
-      "Study design files in order to create a page that looks good on many screen sizes.",
-      "Setup LESS and organize LESS files via imports.",
-      "Design page using FlexBox, LESS, and media queries."
-    ],
-    "deployed_url": "https://jeffreyo3.github.io/Preprocessing-II/",
-    "github_repo": "https://github.com/Jeffreyo3/Preprocessing-II",
+    "name": "Minimal Arena",
+    "description": ["Role: Create a backend to store user information (characters, inventory, eqiped items, display assets) and user autentication. As the frontend will initially calculate combat results, backend will store any permanent character stat bonuses as well as information about skills and their effects.", "Summary: A simple browser-based RPG combat system allowing players to select a class, create a custom character, and fight various mobs. Winning fights will give the character experience points and in the future, players will be able to customize stat increases.", "Tech stack: NodeJS, Express, Knex, PosgreSQL, bcrypt, jsonwebtoken"],
+    "deployed_url": "https://minimal-arena.herokuapp.com/",
+    "github_repo": "https://github.com/Minimal-Arena/express-app",
+    "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1602119071/portfolio-screens/ma-db-schema_a962j9.png",
+    "tags": ["NodeJS", "Express", "Knex", "PostgreSQL", "bcrypt", ""]
+  },
+  {
+    "id": 4,
+    "name": "J|O Portfolio",
+    "description": ["Role: Create this website! Style portfolio based on a given Figma design file. Add additional styling for mobile responsiveness. Create a simple backend to handle contact form submission.", "Description: Developer portfolio to show off select projects with unique solutions. Allow users to view the live/deployed product, the code base, and to fill out a contact form if desired.", "Tech stack: Semantic HTML, CSS Reset, Styled-Components, ReactJS, Axios, NodeJS, Express, Knex, PostgreSQL"],
+    "deployed_url": "https://www.jeffreyorndorff.com/",
+    "github_repo": "https://github.com/Jeffreyo3/react-portfolio",
     "screenshot": null,
-    "tags": ["HTML", "LESS"]
+    "tags": ["HTML", "Styled Components", "ReactJS", "Axios", "React Hook Form"]
   }
 ]

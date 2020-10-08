@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Nav from "./components/Nav";
 import Intro from "./components/Intro";
@@ -6,6 +6,7 @@ import Summary from "./components/Summary";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import ContactCompleted from "./components/Contact/ContactCompleted";
 import Footer from "./components/Footer";
 
 //////////// STYLED COMPONENTS /////////////
@@ -39,9 +40,10 @@ const FooterContainer = styled.footer`
 
 //////////// REACT COMPONENT /////////////
 export default function App() {
+  const [submitted, setSubmitted] = useState(false);
+
   return (
     <AppDiv>
-
       <Header>
         <Nav />
       </Header>
@@ -56,14 +58,17 @@ export default function App() {
 
       <DIVIDE />
 
-      <Contact />
+      {submitted ? (
+        <ContactCompleted />
+      ) : (
+        <Contact setSubmitted={setSubmitted} />
+      )}
 
       <DIVIDE />
 
       <FooterContainer>
         <Footer />
       </FooterContainer>
-
     </AppDiv>
   );
 }
