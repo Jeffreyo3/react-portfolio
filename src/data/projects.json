@@ -52,8 +52,8 @@
     "id": 4,
     "name": "J|O Portfolio",
     "description": ["Role: Create this website! Style portfolio based on a given Figma design file. Add additional styling for mobile responsiveness. Create a simple backend to handle contact form submission.", "Description: Developer portfolio to show off select projects with unique solutions. Allow users to view the live/deployed product, the code base, and to fill out a contact form if desired.", "Tech stack: Semantic HTML, CSS Reset, Styled-Components, ReactJS, Axios, NodeJS, Express, Knex, PostgreSQL"],
-    "deployed_url": "https://jeffreyo3.github.io/Preprocessing-II/",
-    "github_repo": "https://github.com/Jeffreyo3/Preprocessing-II",
+    "deployed_url": "https://www.jeffreyorndorff.com/",
+    "github_repo": "https://github.com/Jeffreyo3/react-portfolio",
     "screenshot": null,
     "tags": ["HTML", "Styled Components", "ReactJS", "Axios", "React Hook Form"]
   }
