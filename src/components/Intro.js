@@ -29,7 +29,7 @@ export default function Intro() {
 
     return (
         <IntroDiv>
-            <TitleH1>Hello, My name is Jeff and I’m a software Developer.</TitleH1>
+            <TitleH1>Hello, My name is Jeff and I’m a Software Developer.</TitleH1>
             <Img src={headshot} alt="Jeff in black shirt smiling in front of a grey background."/>
         </IntroDiv>
     )
