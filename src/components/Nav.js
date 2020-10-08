@@ -12,6 +12,9 @@ const NavBar = styled.nav`
 const Span = styled.span`
   color: ${(p) => p.theme.colors.c_tertiary};
   font-size: ${(p) => p.theme.fontsizes.fs_h};
+  @media (max-width: 575px) {
+    font-size: ${(p) => p.theme.fontsizes.fs_h_mobile};
+  }
 `;
 
 const Ul = styled.ul`
@@ -21,10 +24,16 @@ const Ul = styled.ul`
   align-items: center;
   width: 70%;
   max-width: 600px;
+  @media (max-width: 575px) {
+    width: 80%;
+  }
 `;
 
 const Li = styled.li`
   font-size: ${(p) => p.theme.fontsizes.fs_li};
+  @media (max-width: 575px) {
+    font-size: ${(p) => p.theme.fontsizes.fs_li_mobile};
+  }
 `;
 
 const A = styled.a`

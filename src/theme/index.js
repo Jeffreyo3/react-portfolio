@@ -17,9 +17,12 @@ const colors = {
 const fontsizes = {
   fs_p: "2.4rem",
   fs_h: "3.6rem",
+  fs_h_mobile: "2.8rem",
   fs_secondary_h: "3.2rem",
   fs_title: "6.4rem",
+  fs_title_mobile: "5.3rem",
   fs_li: "2.4rem",
+  fs_li_mobile: "1.8rem",
   fs_label: "2.4rem",
   fs_description: "2rem",
   fs_footer: "1.5rem",

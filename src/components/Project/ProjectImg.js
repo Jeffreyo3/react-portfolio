@@ -6,27 +6,32 @@ import background from "../../images/code_blue_green.jpg";
 const ImgContainer = styled.div`
   position: relative;
   width: 60rem;
-  /* height: 53rem; */
   overflow: hidden;
-  /* background-color: ${(pr) => pr.theme.colors.c_background}; */
   background-image: url(${background});
-  /* background-repeat: no-repeat; */
   background-size: 100% 100%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+
+  @media (max-width: 900px) {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    width: 100%;
+    height: 55.5rem;
+  }
 `;
 
 const Img = styled.img`
-  /* width: 100%; */
-  height: 100%;
+  width: 111%;
   min-width: 50rem;
-  /* min-height: 53rem; */
   position: absolute;
   top: -9999px;
   left: -9999px;
   right: -9999px;
   bottom: -9999px;
   margin: auto;
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 //////////// END STYLED COMPONENTS /////////////
 

@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Plza: Connection Through Pizza",
     "description": [
-      "Role: Worked on a team of 5 other developers to add to an existing code base. Built out the user dashboards and gave users the ability to follow other users. increased the project's test coverage from 0% to 20% (unit testing).",
+      "Role: Worked on a team of 5 other developers to add to an existing code base. Built out the user dashboards and gave users the ability to follow other users. Increased the project's test coverage from 0% to 20% (unit testing).",
       "Summary: Connecting pizza eaters & businesses- find & rate pizza and organize pizza-related social gatherings and events. Eaters: Find your friends and favorite places, maybe discover something new! Leave & read reviews. Businesses: Engage with fans, both old and new.",
       "Tech stack: ReactJS, SemanticUI, Redux, Axios, Jest, React-Testing-Library, NodeJS, Express, Knex, PostgreSQL, AWS Amplify."
     ],
