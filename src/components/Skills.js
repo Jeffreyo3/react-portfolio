@@ -19,6 +19,20 @@ const SkillGrid = styled.ul`
   height: 6rem;
   max-width: 1000px;
   margin: 0 auto;
+  @media (max-width: 715px) {
+    display: none;
+  }
+`;
+
+const SkillFlex = styled.ul`
+  display: none;
+
+  @media (max-width: 715px) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 5rem auto 0;
+  }
 `;
 //////////// END STYLED COMPONENTS /////////////
 
@@ -39,6 +53,18 @@ export default function Skills() {
           );
         })}
       </SkillGrid>
+
+      <SkillFlex>
+        {skills.map((skill, idx) => {
+          return (
+            <SkillCard
+              key={idx}
+              skill={skill}
+              last={true}
+            />
+          );
+        })}
+      </SkillFlex>
     </Container>
   );
 }

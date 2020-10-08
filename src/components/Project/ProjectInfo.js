@@ -9,6 +9,10 @@ const ProjInfo = styled.div`
   height: 80%;
   min-height: 32rem;
   margin: 10% 15% ;
+  @media(max-width: 900px){
+    height: auto;
+    margin: 8%;
+  }
 `;
 
 const InfoText = styled.div`

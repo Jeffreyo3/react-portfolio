@@ -2,9 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 ////////////// STYLED COMPONENTS ///////////////
-const SkillGridItem = styled.li`
+const SkillItem = styled.li`
   font-size: ${(pr) => pr.theme.fontsizes.fs_p};
   font-style: italic;
+
+  @media (max-width: 715px) {
+    text-align: center;
+    width: 30%;
+    height: 5rem;
+  }
 `;
 
 const Border = styled.div`
@@ -16,11 +22,11 @@ const Border = styled.div`
 /////////////// REACT COMPONENT ////////////////
 export default function SkillCard({ skill, last }) {
   if (last) {
-    return <SkillGridItem>{skill}</SkillGridItem>;
+    return <SkillItem>{skill}</SkillItem>;
   } else {
     return (
       <>
-        <SkillGridItem>{skill}</SkillGridItem>
+        <SkillItem>{skill}</SkillItem>
         <Border />
       </>
     );
