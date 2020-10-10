@@ -8,7 +8,7 @@ const SkillItem = styled.li`
 
   @media (max-width: 715px) {
     text-align: center;
-    width: 30%;
+    width: 33%;
     height: 5rem;
   }
 `;

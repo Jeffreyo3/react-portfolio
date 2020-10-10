@@ -38,7 +38,7 @@ const Img = styled.img`
 /////////////// REACT COMPONENT ////////////////
 export default function ProjectImg({ alt, img }) {
   return (
-    <ImgContainer>{img ? <Img src={img} alt={alt} /> : null}</ImgContainer>
+    <ImgContainer>{img ? <Img loading="lazy" src={img} alt={alt} /> : null}</ImgContainer>
   );
 }
 ///////////// END REACT COMPONENT //////////////

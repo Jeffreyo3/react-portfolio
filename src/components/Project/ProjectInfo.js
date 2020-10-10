@@ -8,8 +8,8 @@ const ProjInfo = styled.div`
   justify-content: space-between;
   height: 80%;
   min-height: 32rem;
-  margin: 10% 15% ;
-  @media(max-width: 900px){
+  margin: 10% 15%;
+  @media (max-width: 900px) {
     height: auto;
     margin: 8%;
   }
@@ -36,7 +36,7 @@ const ButtonDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   a {
     display: flex;
     justify-content: center;
@@ -51,7 +51,7 @@ const ButtonDiv = styled.div`
   }
 `;
 
-const CodeButton = styled.a`
+const ButtonOne = styled.a`
   border-color: ${(pr) => pr.theme.colors.c_tertiary};
   background-color: ${(pr) => pr.theme.colors.c_background};
   &:link {
@@ -70,7 +70,7 @@ const CodeButton = styled.a`
     color: ${(pr) => pr.theme.colors.c_tertiary};
   }
 `;
-const LiveButton = styled.a`
+const ButtonTwo = styled.a`
   border-color: ${(pr) => pr.theme.colors.c_primary};
   background-color: ${(pr) => pr.theme.colors.c_primary};
   &:link {
@@ -82,7 +82,7 @@ const LiveButton = styled.a`
   &:hover {
     color: ${(pr) => pr.theme.colors.c_live};
     font-weight: bold;
-    border-color: ${pr => pr.theme.colors.c_tertiary};
+    border-color: ${(pr) => pr.theme.colors.c_tertiary};
     box-shadow: 4px 4px 5px ${(pr) => pr.theme.colors.c_shadow};
     cursor: pointer;
   }
@@ -93,31 +93,34 @@ const LiveButton = styled.a`
 //////////// END STYLED COMPONENTS /////////////
 
 /////////////// REACT COMPONENT ////////////////
-export default function ProjectInfo({project}) {
+export default function ProjectInfo({ project }) {
   return (
-    <ProjInfo>
-          <InfoText>
-            <h3>{project.name}</h3>
-            {project.description.map((item,idx) => <p key={idx}>{item}</p>)}
-            {/* <p>{project.description}</p> */}
-          </InfoText>
-          <ButtonDiv>
-            <CodeButton
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.github_repo}
-            >
-              Code
-            </CodeButton>
-            <LiveButton
-              target="_blank"
-              rel="noopener noreferrer"
-              href={project.deployed_url}
-            >
-              Live
-            </LiveButton>
-          </ButtonDiv>
-        </ProjInfo>
+    <ProjInfo id={`project_id_${project.id}`}>
+      <InfoText>
+        <h3>{project.name}</h3>
+        {project.description.map((item, idx) => (
+          <p key={idx}>{item}</p>
+        ))}
+      </InfoText>
+
+      <ButtonDiv>
+        <ButtonOne
+          target="_blank"
+          rel="noopener noreferrer"
+          href={project.button_1_url}
+        >
+          {project.button_1}
+        </ButtonOne>
+
+        <ButtonTwo
+          target="_blank"
+          rel="noopener noreferrer"
+          href={project.button_2_url}
+        >
+          {project.button_2}
+        </ButtonTwo>
+      </ButtonDiv>
+    </ProjInfo>
   );
 }
 ///////////// END REACT COMPONENT //////////////

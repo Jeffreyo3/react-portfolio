@@ -3,11 +3,11 @@ import styled from "styled-components";
 import loading from "../../images/rings-loading.svg";
 
 ////////////// STYLED COMPONENTS ///////////////
-const ContactCompletedContainer = styled.div`
+const ContactLoadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 12rem;
+  height: 22rem;
 `;
 
 const P = styled.p`
@@ -18,12 +18,12 @@ const P = styled.p`
 //////////// END STYLED COMPONENTS /////////////
 
 /////////////// REACT COMPONENT ////////////////
-export default function ContactCompleted() {
+export default function ContactLoading() {
   return (
-    <ContactCompletedContainer>
+    <ContactLoadingContainer>
       <img alt="Pulsating rings indicating that the submission request is in progress." src={loading} />
       <P>Submitting</P>
-    </ContactCompletedContainer>
+    </ContactLoadingContainer>
   );
 }
 ///////////// END REACT COMPONENT //////////////

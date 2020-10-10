@@ -7,8 +7,10 @@
       "Summary: Connecting pizza eaters & businesses- find & rate pizza and organize pizza-related social gatherings and events. Eaters: Find your friends and favorite places, maybe discover something new! Leave & read reviews. Businesses: Engage with fans, both old and new.",
       "Tech stack: ReactJS, SemanticUI, Redux, Axios, Jest, React-Testing-Library, NodeJS, Express, Knex, PostgreSQL, AWS Amplify."
     ],
-    "deployed_url": "https://www.pleazza.com/",
-    "github_repo": "https://github.com/Jeffreyo3/Labs-Pleazza-Front-End",
+    "button_1": "GitHub Repo",
+    "button_1_url": "https://github.com/Jeffreyo3/Labs-Pleazza-Front-End",
+    "button_2": "Live Site",
+    "button_2_url": "https://www.pleazza.com/",
     "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1602093402/portfolio-screens/conways-game-of-life_mootxd.png",
     "tags": [
       "HTML",
@@ -34,26 +36,41 @@
       "Summary: This is a turing complete algorithm that simulates cellular automata. Conway's Game of Life was created in 1970 by the British mathmetician, John Horton Conway. The player interacts with the game by creating an initial layout, and when executed, the game is capable of infinitely evolving.",
       "Tech stack: CSS, ReactJS, Redux"
     ],
-    "deployed_url": "https://jeffs-game-of-life.vercel.app/",
-    "github_repo": "https://github.com/Jeffreyo3/conways-game-of-life",
+    "button_1": "GitHub Repo",
+    "button_1_url": "https://github.com/Jeffreyo3/conways-game-of-life",
+    "button_2": "Live Site",
+    "button_2_url": "https://jeffs-game-of-life.vercel.app/",
     "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1602111682/portfolio-screens/conways-game-of-life_asbiza.png",
     "tags": ["HTML", "CSS", "ReactJS", "Redux", "Algorithms"]
   },
   {
     "id": 3,
     "name": "Minimal Arena",
-    "description": ["Role: Create a backend to store user information (characters, inventory, eqiped items, display assets) and user autentication. As the frontend will initially calculate combat results, backend will store any permanent character stat bonuses as well as information about skills and their effects.", "Summary: A simple browser-based RPG combat system allowing players to select a class, create a custom character, and fight various mobs. Winning fights will give the character experience points and in the future, players will be able to customize stat increases.", "Tech stack: NodeJS, Express, Knex, PosgreSQL, bcrypt, jsonwebtoken"],
-    "deployed_url": "https://minimal-arena.herokuapp.com/",
-    "github_repo": "https://github.com/Minimal-Arena/express-app",
+    "description": [
+      "Note: Frontend still in development. View GitHub repository for endpoint documentation.",
+      "Role: Create a backend to store user information (characters, inventory, eqiped items, display assets) and user autentication. As the frontend will initially calculate combat results, backend will store any permanent character stat bonuses as well as information about skills and their effects.",
+      "Summary: A simple browser-based RPG combat system allowing players to select a class, create a custom character, and fight various mobs. Winning fights will give the character experience points and in the future, players will be able to customize stat increases.",
+      "Tech stack: NodeJS, Express, Knex, PosgreSQL, bcrypt, jsonwebtoken"
+    ],
+    "button_1": "GitHub Repo",
+    "button_1_url": "https://github.com/Minimal-Arena/express-app",
+    "button_2": "Base API",
+    "button_2_url": "https://minimal-arena.herokuapp.com/",
     "screenshot": "https://res.cloudinary.com/jeffreyo3/image/upload/v1602119071/portfolio-screens/ma-db-schema_a962j9.png",
     "tags": ["NodeJS", "Express", "Knex", "PostgreSQL", "bcrypt", ""]
   },
   {
     "id": 4,
     "name": "J|O Portfolio",
-    "description": ["Role: Create this website! Style portfolio based on a given Figma design file. Add additional styling for mobile responsiveness. Create a simple backend to handle contact form submission.", "Description: Developer portfolio to show off select projects with unique solutions. Allow users to view the live/deployed product, the code base, and to fill out a contact form if desired.", "Tech stack: Semantic HTML, CSS Reset, Styled-Components, ReactJS, Axios, NodeJS, Express, Knex, PostgreSQL"],
-    "deployed_url": "https://www.jeffreyorndorff.com/",
-    "github_repo": "https://github.com/Jeffreyo3/react-portfolio",
+    "description": [
+      "Role: Create this website! Style portfolio based on a given Figma design file. Add additional styling for mobile responsiveness. Create a simple backend to handle contact form submission.",
+      "Description: Developer portfolio to show off select projects with unique solutions. Allow users to view the live/deployed product, the code base, and to fill out a contact form if desired.",
+      "Tech stack: Semantic HTML, CSS Reset, Styled-Components, ReactJS, Axios, NodeJS, Express, Knex, PostgreSQL"
+    ],
+    "button_1": "GitHub Repo",
+    "button_1_url": "https://github.com/Jeffreyo3/react-portfolio",
+    "button_2": "Jeffrey on LinkedIn",
+    "button_2_url": "https://www.linkedin.com/in/jeffrey-orndorff/",
     "screenshot": null,
     "tags": ["HTML", "Styled Components", "ReactJS", "Axios", "React Hook Form"]
   }
