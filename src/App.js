@@ -48,24 +48,25 @@ export default function App() {
         <Nav />
       </Header>
 
-      <Intro />
-      <Skills />
-      <Summary />
+      <main>
+        <Intro />
+        <Skills />
+        <Summary />
 
-      <DIVIDE />
+        <DIVIDE />
 
-      <Projects />
+        <Projects />
 
-      <DIVIDE />
+        <DIVIDE />
 
-      {submitted ? (
-        <ContactCompleted />
-      ) : (
-        <Contact setSubmitted={setSubmitted} />
-      )}
+        {submitted ? (
+          <ContactCompleted />
+        ) : (
+          <Contact setSubmitted={setSubmitted} />
+        )}
 
-      <DIVIDE />
-
+        <DIVIDE />
+      </main>
       <FooterContainer>
         <Footer />
       </FooterContainer>

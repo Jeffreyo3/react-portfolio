@@ -4,7 +4,7 @@ import ProjectImg from "./ProjectImg";
 import ProjectInfo from "./ProjectInfo";
 
 ////////////// STYLED COMPONENTS ///////////////
-const CardContainer = styled.div`
+const CardContainer = styled.section`
   display: flex;
   width: 100%;
   margin: 3rem auto 7rem;
