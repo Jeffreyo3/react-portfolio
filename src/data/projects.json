@@ -48,7 +48,7 @@
     "name": "Minimal Arena",
     "description": [
       "Note: Frontend still in development. View GitHub repository for endpoint documentation.",
-      "Role: Create a backend to store user information (characters, inventory, eqiped items, display assets) and user autentication. As the frontend will initially calculate combat results, backend will store any permanent character stat bonuses as well as information about skills and their effects.",
+      "Role: Create a backend to store user information (characters, inventory, equipped items, display assets) and user autentication. As the frontend will initially calculate combat results, backend will store any permanent character stat bonuses as well as information about skills and their effects.",
       "Summary: A simple browser-based RPG combat system allowing players to select a class, create a custom character, and fight various mobs. Winning fights will give the character experience points and in the future, players will be able to customize stat increases.",
       "Tech stack: NodeJS, Express, Knex, PosgreSQL, bcrypt, jsonwebtoken"
     ],
