@@ -8,14 +8,6 @@ const P = styled.p`
   margin: 2.4rem 0;
   line-height: 1.2;
 `;
-
-const A = styled.a`
-  display: block;
-  text-decoration: underline;
-  font-size: ${(pr) => pr.theme.fontsizes.fs_p};
-  color: ${(pr) => pr.theme.colors.c_tertiary};
-  margin-bottom: 2rem;
-`;
 //////////// END STYLED COMPONENTS /////////////
 
 /////////////// REACT COMPONENT ////////////////
@@ -39,13 +31,6 @@ export default function Summary() {
         months, I have picked up and learned OOP through Python3 and Java.
       </P>
 
-      <A
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://drive.google.com/file/d/1lCLQyx_lGsrm7S1Z1nCNa-7aBQODDP16"
-      >
-        View my resume
-      </A>
     </Container>
   );
 }
