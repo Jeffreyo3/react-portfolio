@@ -68,10 +68,16 @@ export default function Nav() {
           <A href="#projects">Projects</A>
         </Li>
         <Li>
-          <A href="#">Resume</A>
+          <A href="#contact">Contact</A>
         </Li>
         <Li>
-          <A href="#contact">Contact</A>
+          <A
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/jeffrey-orndorff"
+          >
+            LinkedIn
+          </A>
         </Li>
       </Ul>
     </NavBar>
