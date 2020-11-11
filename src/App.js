@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import styled from "styled-components";
 import Nav from "./components/Nav";
@@ -51,41 +51,44 @@ const FooterContainer = styled.footer`
 //////////// REACT COMPONENT /////////////
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
+  const body = document.querySelector("body");
 
   return (
     <AppDiv>
       <Header>
-        <Nav />
+        <Nav body={body} />
       </Header>
-
-      <Route exact path="/">
-        <Home
-          submitted={submitted}
-          setSubmitted={setSubmitted}
-          DIVIDE={DIVIDE}
-          FooterContainer={FooterContainer}
-        />
-      </Route>
-      <Route path="/about">
-        <Intro />
-        <Skills />
-        <Summary />
-        <DIVIDE />
-      </Route>
-      <Route path="/projects">
-        <SPACE />
-        <Projects />
-        <DIVIDE />
-      </Route>
-      <Route path="/contact">
-        <SPACE />
-        {submitted ? (
-          <ContactCompleted />
-        ) : (
-          <Contact setSubmitted={setSubmitted} />
-        )}
-        <DIVIDE />
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Home
+            body={body}
+            submitted={submitted}
+            setSubmitted={setSubmitted}
+            DIVIDE={DIVIDE}
+            FooterContainer={FooterContainer}
+          />
+        </Route>
+        <Route path="/about">
+          <Intro />
+          <Skills />
+          <Summary />
+          <DIVIDE />
+        </Route>
+        <Route path="/projects">
+          <SPACE />
+          <Projects />
+          <DIVIDE />
+        </Route>
+        <Route path="/contact">
+          <SPACE />
+          {submitted ? (
+            <ContactCompleted />
+          ) : (
+            <Contact setSubmitted={setSubmitted} />
+          )}
+          <DIVIDE />
+        </Route>
+      </Switch>
 
       <FooterContainer>
         <Footer />

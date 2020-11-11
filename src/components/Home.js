@@ -40,13 +40,14 @@ const defaultOptions = {
 export default function Home(props) {
   const { FooterContainer, DIVIDE } = props;
   const { submitted, setSubmitted } = props;
+  const { body } = props;
 
   const [pageIn, setPageIn] = useState(false);
   const [svgIn, setSvgIn] = useState(true);
 
   useEffect(() => {
     // remove scrollbar during anmiation
-    const body = document.querySelector("body");
+    
     body.style.overflow = "hidden";
 
     const timer = setTimeout(() => {

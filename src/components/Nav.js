@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -51,8 +51,19 @@ const StyledLink = styled(Link)`
     font-weight: bold;
     cursor: pointer;
   }
-  &:active {
-    color: ${(pr) => pr.theme.colors.c_p};
+`;
+const ActiveStyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${(pr) => pr.theme.colors.c_tertiary};
+  font-weight: bold;
+  cursor: pointer;
+  &:link {
+    font-weight: bold;
+    cursor: pointer;
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+  }
+  &:visited {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
   }
 `;
 
@@ -70,28 +81,55 @@ const A = styled.a`
     cursor: pointer;
   }
   &:active {
-    color: ${(pr) => pr.theme.colors.c_p};
+    color: ${(pr) => pr.theme.colors.c_tertiary};
   }
 `;
 //////////// END STYLED COMPONENTS /////////////
 
 //////////// REACT COMPONENT /////////////
-export default function Nav() {
+export default function Nav(props) {
+  const [path, setPath] = useState("/");
+  const {body} = props;
+
+  const watchPath = (e) => {
+    setPath(e.target.textContent);
+    body.style.overflow = "auto";
+  };
+
   return (
     <NavBar>
       <HomeLink to="/">J|O</HomeLink>
       <Ul>
-        {/* <Li>
-          <StyledLink to="/">Home</StyledLink>
-        </Li> */}
         <Li>
-          <StyledLink to="/about">About</StyledLink>
+          {path === "Projects" ? (
+            <ActiveStyledLink onClick={watchPath} to="/projects">
+              Projects
+            </ActiveStyledLink>
+          ) : (
+            <StyledLink onClick={watchPath} to="/projects">
+              Projects
+            </StyledLink>
+          )}
         </Li>
         <Li>
-          <StyledLink to="/projects">Projects</StyledLink>
+          {path === "About" ? (
+            <ActiveStyledLink to="/about">About</ActiveStyledLink>
+          ) : (
+            <StyledLink onClick={watchPath} to="/about">
+              About
+            </StyledLink>
+          )}
         </Li>
         <Li>
-          <StyledLink to="contact">Contact</StyledLink>
+          {path === "Contact" ? (
+            <ActiveStyledLink onClick={watchPath} to="contact">
+              Contact
+            </ActiveStyledLink>
+          ) : (
+            <StyledLink onClick={watchPath} to="contact">
+              Contact
+            </StyledLink>
+          )}
         </Li>
         <Li>
           <A
