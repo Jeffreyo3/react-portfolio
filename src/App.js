@@ -39,7 +39,7 @@ const DIVIDE = styled.div`
 const SPACE = styled.div`
   max-width: 82.5rem;
   width: 95%;
-  margin: 6rem auto;
+  margin: 3rem auto;
 `;
 
 const FooterContainer = styled.footer`
