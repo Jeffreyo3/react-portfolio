@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 //////////// STYLED COMPONENTS /////////////
@@ -9,7 +10,8 @@ const NavBar = styled.nav`
   border-bottom: 2px solid ${(p) => p.theme.colors.c_secondary};
 `;
 
-const Span = styled.span`
+const HomeLink = styled(Link)`
+  text-decoration: none;
   color: ${(p) => p.theme.colors.c_tertiary};
   font-size: ${(p) => p.theme.fontsizes.fs_h};
   @media (max-width: 575px) {
@@ -36,6 +38,24 @@ const Li = styled.li`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  &:link {
+    color: ${(pr) => pr.theme.colors.c_p};
+  }
+  &:visited {
+    color: ${(pr) => pr.theme.colors.c_p};
+  }
+  &:hover {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &:active {
+    color: ${(pr) => pr.theme.colors.c_p};
+  }
+`;
+
 const A = styled.a`
   text-decoration: none;
   &:link {
@@ -59,16 +79,19 @@ const A = styled.a`
 export default function Nav() {
   return (
     <NavBar>
-      <Span>J|O</Span>
+      <HomeLink to="/">J|O</HomeLink>
       <Ul>
+        {/* <Li>
+          <StyledLink to="/">Home</StyledLink>
+        </Li> */}
         <Li>
-          <A href="#about">About</A>
+          <StyledLink to="/about">About</StyledLink>
         </Li>
         <Li>
-          <A href="#projects">Projects</A>
+          <StyledLink to="/projects">Projects</StyledLink>
         </Li>
         <Li>
-          <A href="#contact">Contact</A>
+          <StyledLink to="contact">Contact</StyledLink>
         </Li>
         <Li>
           <A

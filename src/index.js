@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import styled, { ThemeProvider } from "styled-components";
@@ -11,10 +12,11 @@ const Background = styled.div`
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <Background>
-      {" "}
-      <App />
-    </Background>
+    <Router>
+      <Background>
+        <App />
+      </Background>
+    </Router>
   </ThemeProvider>,
   document.getElementById("root")
 );
