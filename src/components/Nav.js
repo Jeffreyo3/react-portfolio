@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 //////////// STYLED COMPONENTS /////////////
@@ -9,7 +10,8 @@ const NavBar = styled.nav`
   border-bottom: 2px solid ${(p) => p.theme.colors.c_secondary};
 `;
 
-const Span = styled.span`
+const HomeLink = styled(Link)`
+  text-decoration: none;
   color: ${(p) => p.theme.colors.c_tertiary};
   font-size: ${(p) => p.theme.fontsizes.fs_h};
   @media (max-width: 575px) {
@@ -36,6 +38,35 @@ const Li = styled.li`
   }
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  &:link {
+    color: ${(pr) => pr.theme.colors.c_p};
+  }
+  &:visited {
+    color: ${(pr) => pr.theme.colors.c_p};
+  }
+  &:hover {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+    font-weight: bold;
+    cursor: pointer;
+  }
+`;
+const ActiveStyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${(pr) => pr.theme.colors.c_tertiary};
+  font-weight: bold;
+  cursor: pointer;
+  &:link {
+    font-weight: bold;
+    cursor: pointer;
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+  }
+  &:visited {
+    color: ${(pr) => pr.theme.colors.c_tertiary};
+  }
+`;
+
 const A = styled.a`
   text-decoration: none;
   &:link {
@@ -50,25 +81,55 @@ const A = styled.a`
     cursor: pointer;
   }
   &:active {
-    color: ${(pr) => pr.theme.colors.c_p};
+    color: ${(pr) => pr.theme.colors.c_tertiary};
   }
 `;
 //////////// END STYLED COMPONENTS /////////////
 
 //////////// REACT COMPONENT /////////////
-export default function Nav() {
+export default function Nav(props) {
+  const [path, setPath] = useState("/");
+  const {body} = props;
+
+  const watchPath = (e) => {
+    setPath(e.target.textContent);
+    body.style.overflow = "auto";
+  };
+
   return (
     <NavBar>
-      <Span>J|O</Span>
+      <HomeLink to="/">J|O</HomeLink>
       <Ul>
         <Li>
-          <A href="#about">About</A>
+          {path === "Projects" ? (
+            <ActiveStyledLink onClick={watchPath} to="/projects">
+              Projects
+            </ActiveStyledLink>
+          ) : (
+            <StyledLink onClick={watchPath} to="/projects">
+              Projects
+            </StyledLink>
+          )}
         </Li>
         <Li>
-          <A href="#projects">Projects</A>
+          {path === "About" ? (
+            <ActiveStyledLink to="/about">About</ActiveStyledLink>
+          ) : (
+            <StyledLink onClick={watchPath} to="/about">
+              About
+            </StyledLink>
+          )}
         </Li>
         <Li>
-          <A href="#contact">Contact</A>
+          {path === "Contact" ? (
+            <ActiveStyledLink onClick={watchPath} to="contact">
+              Contact
+            </ActiveStyledLink>
+          ) : (
+            <StyledLink onClick={watchPath} to="contact">
+              Contact
+            </StyledLink>
+          )}
         </Li>
         <Li>
           <A

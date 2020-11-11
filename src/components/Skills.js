@@ -40,7 +40,7 @@ const SkillFlex = styled.ul`
 export default function Skills() {
   return (
     <Container>
-      <H2 id="about">Skills</H2>
+      <H2>Skills</H2>
 
       <SkillGrid>
         {skills.map((skill, idx) => {
@@ -56,13 +56,7 @@ export default function Skills() {
 
       <SkillFlex>
         {skills.map((skill, idx) => {
-          return (
-            <SkillCard
-              key={idx}
-              skill={skill}
-              last={true}
-            />
-          );
+          return <SkillCard key={idx} skill={skill} last={true} />;
         })}
       </SkillFlex>
     </Container>
