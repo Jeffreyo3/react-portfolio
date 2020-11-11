@@ -155,7 +155,7 @@ export default function Contact({ setSubmitted }) {
   return isLoading ? (
     <ContactLoading />
   ) : (
-    <Container id="contact">
+    <Container>
       <H2>Contact: Let's get in touch!</H2>
       {submitFail ? <ContactFailed /> : null}
       <Form onSubmit={handleSubmit(onSubmit)}>
