@@ -47,13 +47,12 @@ export default function Home(props) {
 
   useEffect(() => {
     // remove scrollbar during anmiation
-    
+
     body.style.overflow = "hidden";
 
     const timer = setTimeout(() => {
       // trigger fade-out
       setSvgIn(false);
-      body.style.overflow = "auto";
       // then unmount
       unMountSVG();
     }, 4000);
@@ -62,6 +61,7 @@ export default function Home(props) {
 
   const unMountSVG = () => {
     setTimeout(() => {
+      body.style.overflow = "auto";
       setPageIn(true);
     }, 310);
   };
