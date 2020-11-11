@@ -98,7 +98,7 @@ export default function Nav(props) {
 
   return (
     <NavBar>
-      <HomeLink to="/">J|O</HomeLink>
+      <HomeLink onClick={watchPath} to="/">J|O</HomeLink>
       <Ul>
         <Li>
           {path === "Projects" ? (
