@@ -12,6 +12,7 @@ const Background = styled.div`
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <Background>
+      {" "}
       <App />
     </Background>
   </ThemeProvider>,
