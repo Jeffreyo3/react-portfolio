@@ -33,8 +33,10 @@ const fonts = {
   f_secondary: "Open Sans",
 };
 
-export default {
+const theme = {
   colors,
   fontsizes,
   fonts,
 };
+
+export default theme;

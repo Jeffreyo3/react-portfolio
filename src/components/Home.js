@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import Intro from "../components/Intro";
 import Summary from "../components/Summary";
@@ -9,7 +9,7 @@ import ContactCompleted from "../components/Contact/ContactCompleted";
 import Footer from "../components/Footer";
 
 import { Transition } from "react-transition-group";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import animationData from "../theme/bow.json";
 
 // transition
@@ -31,7 +31,6 @@ const transitionStyles = {
 const defaultOptions = {
   loop: false,
   autoplay: true,
-  animationData: animationData,
   rendererSettings: {
     preserveAspectRatio: "xMidYMid slice",
   },
@@ -45,26 +44,23 @@ export default function Home(props) {
   const [pageIn, setPageIn] = useState(false);
   const [svgIn, setSvgIn] = useState(true);
 
-  useEffect(() => {
-    // remove scrollbar during anmiation
-
-    body.style.overflow = "hidden";
-
-    const timer = setTimeout(() => {
-      // trigger fade-out
-      setSvgIn(false);
-      // then unmount
-      unMountSVG();
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const unMountSVG = () => {
+  const unMountSVG = useCallback(() => {
     setTimeout(() => {
       body.style.overflow = "auto";
       setPageIn(true);
     }, 310);
-  };
+  }, [body, setPageIn]);
+  
+  useEffect(() => {
+    body.style.overflow = "hidden";
+  
+    const timer = setTimeout(() => {
+      setSvgIn(false);
+      unMountSVG();
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [unMountSVG, body, setSvgIn]);
+  
 
   return (
     <>
@@ -73,6 +69,7 @@ export default function Home(props) {
           {(state) => (
             <>
               <Lottie
+                animationData={animationData}
                 options={defaultOptions}
                 height={"70vh"}
                 width={180}
