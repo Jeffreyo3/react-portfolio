@@ -21,9 +21,31 @@ jobs:
       - run:
           name: Build React App
           command: npm run build
+      - run:
+          name: Install gcloud
+          command: |
+            curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-360.0.0-linux-x86_64.tar.gz
+            tar -xzf google-cloud-sdk-360.0.0-linux-x86_64.tar.gz
+            ./google-cloud-sdk/install.sh --quiet
+            source $HOME/google-cloud-sdk/completion.bash.inc
+            source $HOME/google-cloud-sdk/path.bash.inc
+      - run:
+          name: Authenticate with gcloud
+          command: |
+            gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY_PATH
+      - run:
+          name: Deploy to Google Cloud
+          command: |
+            gcloud config set project $GCLOUD_PROJECT_ID
+            gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY_PATH
+            gcloud builds submit --tag gcr.io/$GCLOUD_PROJECT_ID/react-portfolio:$CIRCLE_SHA1
 
 workflows:
   version: 2
   build:
     jobs:
       - build
+
+environment:
+  GCLOUD_PROJECT_ID: $PORTFOLIO_PROJECT_ID
+  SERVICE_ACCOUNT_KEY_PATH: $SERVICE_ACCOUNT_KEY_PATH
