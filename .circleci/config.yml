@@ -1,51 +1,71 @@
 version: 2.1
-executors:
-  node-executor:
-    docker:
-      - image: circleci/node:latest
 
-jobs:
-  build:
-    executor: node-executor
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install Dependencies
-          command: npm ci
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run:
-          name: Build React App
-          command: npm run build
-      - run:
-          name: Install gcloud
-          command: |
-            curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-360.0.0-linux-x86_64.tar.gz
-            tar -xzf google-cloud-sdk-360.0.0-linux-x86_64.tar.gz
-            ./google-cloud-sdk/install.sh --quiet
-            source $HOME/google-cloud-sdk/completion.bash.inc
-            source $HOME/google-cloud-sdk/path.bash.inc
-      - run:
-          name: Authenticate with gcloud
-          command: |
-            gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY_PATH
-      - run:
-          name: Deploy to Google Cloud
-          command: |
-            gcloud config set project $GCLOUD_PROJECT_ID
-            gcloud auth activate-service-account --key-file=$SERVICE_ACCOUNT_KEY_PATH
-            gcloud builds submit --tag gcr.io/$GCLOUD_PROJECT_ID/react-portfolio:$CIRCLE_SHA1
+orbs:
+  node: circleci/node@4.1.0
+  gcp-cli: circleci/gcp-cli@3.1.0  # Please replace x.y.z with the correct version
 
 workflows:
   version: 2
-  build:
+  build-deploy:
     jobs:
-      - build
+      - install-dependencies
+      - build-app:
+          requires:
+            - install-dependencies
+      - deploy:
+          requires:
+            - build-app
 
-environment:
-  GCLOUD_PROJECT_ID: $PORTFOLIO_PROJECT_ID
-  SERVICE_ACCOUNT_KEY_PATH: $SERVICE_ACCOUNT_KEY_PATH
+jobs:
+  install-dependencies:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/project
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - save_cache:
+          key: 'npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+          paths:
+            - ./node_modules
+
+  build-app:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/project
+    steps:
+      - checkout
+      - restore_cache:
+          key: 'npm-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}'
+      - run:
+          name: Build React app
+          command: |
+            npm run build
+      - run:
+          name: Name the build with the SHA
+          command: |
+            echo "Build SHA: ${CIRCLE_SHA1}" > build/SHA.txt
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+  deploy:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - gcp-cli/install
+      - run:
+          name: Auth with GCP
+          command: |
+            echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+      - gcp-cli/initialize
+      - attach_workspace:
+          at: .
+      - run:
+          name: Upload and Deploy to GCP
+          command: |
+            gsutil cp -r build gs://jeffreyo3-portfolio
+            gcloud app deploy --quiet
